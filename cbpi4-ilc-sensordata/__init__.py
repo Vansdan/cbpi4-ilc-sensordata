@@ -22,7 +22,7 @@ logger = logging.getLogger(__name__)
     Property.Number(label="Continuous Interval", configurable=True, description="Refresh interval in seconds used in continuous mode")
 ])
 
-class CustomSensor(CBPiSensor):
+class CBPiILC(CBPiSensor):
     
     def __init__(self, cbpi, id, props):
         super(CustomSensor, self).__init__(cbpi, id, props)
@@ -45,6 +45,6 @@ class CustomSensor(CBPiSensor):
 
 def setup(cbpi):
     #cbpi.plugin.register("MyCustomActor", CustomActor)
-    cbpi.plugin.register("ILCSensor", CustomSensor)
+    cbpi.plugin.register("ILCSensor", CBPiILC)
     #cbpi.plugin.register("MyustomWebExtension", CustomWebExtension)
     pass
