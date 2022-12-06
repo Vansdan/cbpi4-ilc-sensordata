@@ -26,7 +26,7 @@ logger = logging.getLogger(__name__)
 class ILCSensorData(CBPiSensor):
     
     def __init__(self, cbpi, id, props):
-        super(KettleSensor, self).__init__(cbpi, id, props)
+        super(ILCSensorData, self).__init__(cbpi, id, props)
         self.value = self.value_old = 0
         self.kettle_controller : KettleController = cbpi.kettle
         self.kettle_id=self.props.get("Kettle")
